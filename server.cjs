@@ -5,7 +5,8 @@ const fs = require("fs");
 const cors = require("cors");
 
 const server = jsonServer.create();
-const router = jsonServer.router("db.json");
+// Use database file inside the db directory
+const router = jsonServer.router(path.join(__dirname, "db", "db.json"));
 const middlewares = jsonServer.defaults();
 
 const port = 3001;
